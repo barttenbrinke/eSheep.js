@@ -1,0 +1,42 @@
+= eSheep.js
+
+Javascript implementation of the well known program eSheep.
+eSheep is also known as Stray Sheep, Sheep.exe, Sheepy or Screen Mate Poe.
+
+== Does
+  - Appear
+  - Walk
+  - Sleep
+  - Destroy
+  - Collision detection
+  - Allow picking up
+
+== Does not
+ - Interact with other sheep
+  - Love
+  - Flip backward uncountious
+ - Dangle when picked up
+ - Eat plants
+ - Get abducted by aliens
+ - Urinate
+ - Get scared
+ - Sneeze
+ - Become a comet
+ - Make sounds
+ - Have gravity
+ - Walk on divs with a 'floor' class
+ - Dangle and fall down a div
+ - Sit
+ - Stick out it's tong
+ 
+yet :)
+
+== Usage
+
+Open index.html for more details on the usage.
+
+== Links
+
+* jquery: http://jquery.com/
+* railsdoctors: http://railsdoctors.com
+* esheep: http://en.wikipedia.org/wiki/ESheep
