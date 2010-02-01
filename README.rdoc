@@ -12,11 +12,11 @@ eSheep is also known as Stray Sheep, Sheep.exe, Sheepy or Screen Mate Poe.
   - Allow picking up
 
 == Does not
+ - Jump
  - Interact with other sheep
   - Love
   - Flip backward uncountious
  - Dangle when picked up
- - Eat plants
  - Get abducted by aliens
  - Urinate
  - Get scared
@@ -28,6 +28,7 @@ eSheep is also known as Stray Sheep, Sheep.exe, Sheepy or Screen Mate Poe.
  - Dangle and fall down a div
  - Sit
  - Stick out it's tong
+ - Eat plants
  
 yet :)
 
@@ -37,6 +38,6 @@ Open index.html for more details on the usage.
 
 == Links
 
-* jquery: http://jquery.com/
+* jquery: http://jquery.com
 * railsdoctors: http://railsdoctors.com
 * esheep: http://en.wikipedia.org/wiki/ESheep
