@@ -12,6 +12,7 @@ var ESheep = Class.extend({
   animationFrame:      0,
   animationX:          0,
   animationY:          0,
+  animationDirection:  false,
   visual:              null,
   dragging:           false,
   
@@ -100,12 +101,16 @@ var ESheep = Class.extend({
     var image_string = 'images/';
 
     var animationPt = Math.floor(this.animationFrame / this.animationSpeed);
-    var base_frame = animationPt % this.animationFrames; 
+    var base_frame = animationPt % this.animationFrames;
     
-    if (this.facingLeft) {
-      image_string += this.animationCurrent + '_' + base_frame + '_LEFT.png';
+    if (this.animationDirection) {
+      if (this.facingLeft) {
+        image_string += this.animationCurrent + '_' + base_frame + '_LEFT.png';
+      } else {
+        image_string += this.animationCurrent + '_' + base_frame + '_RIGHT.png';
+      }
     } else {
-      image_string += this.animationCurrent + '_' + base_frame + '_RIGHT.png';
+      image_string += this.animationCurrent + '_' + base_frame + '.png';      
     }
     
     this.visual.css('background-image', 'url(' + image_string + ')');
@@ -167,7 +172,37 @@ var ESheep = Class.extend({
    * Select what to do next
    */
   nextAnimation: function() {
-    this.walkAnimation();
+    var dice = Math.floor(Math.random()*10);
+
+    switch(dice) {
+      case 0:
+        this.sitAnimation();
+        break;
+
+      case 1:
+        this.sleepAnimation();
+        break;
+
+      case 2:
+        this.waitAnimation();
+        break;
+    
+      // Do something interresting
+      case 3:
+        switch(Math.floor(Math.random()*1)) {
+          case 0:
+            this.pinkelAnimation();
+            break;
+          case 1:
+            this.sneezeAnimation();
+            break;
+        }
+        break;
+        
+      // Do the default thing
+      default:
+        this.walkAnimation();
+    }
   },
   
   /**
@@ -181,6 +216,7 @@ var ESheep = Class.extend({
     this.animationFrame      = 0;
     this.animationX          = 0;
     this.animationY          = 0;
+    this.animationDirection  = true;
   },
 
   /**
@@ -194,6 +230,7 @@ var ESheep = Class.extend({
     this.animationFrame      = 0;
     this.animationX          = 10;
     this.animationY          = 0;
+    this.animationDirection  = true;
     
     if (this.facingLeft) {
       this.animationX          = -10;      
@@ -207,12 +244,55 @@ var ESheep = Class.extend({
    */
   waitAnimation: function() {
     this.animationCurrent    = 'WAIT';
-    this.animationDuration   = 10;
+    this.animationDuration   = 30;
     this.animationSpeed      = 1;
-    this.animationFrames     = 0;
+    this.animationFrames     = 1;
     this.animationFrame      = 0;
     this.animationX          = 0;
     this.animationY          = 0;
+    this.animationDirection  = false;
+  },
+
+  /**
+   * Pinkel Animation
+   */
+  pinkelAnimation: function() {
+    this.animationCurrent    = 'PINKEL';
+    this.animationDuration   = 30;
+    this.animationSpeed      = 1;
+    this.animationFrames     = 2;
+    this.animationFrame      = 0;
+    this.animationX          = 0;
+    this.animationY          = 0;
+    this.animationDirection  = false;
+  },
+
+  /**
+   * Sit Animation
+   */
+  sitAnimation: function() {
+    this.animationCurrent    = 'SIT';
+    this.animationDuration   = 18;
+    this.animationSpeed      = 6;
+    this.animationFrames     = 2;
+    this.animationFrame      = 0;
+    this.animationX          = 0;
+    this.animationY          = 0;
+    this.animationDirection  = false;
+  },
+
+  /**
+   * Sit Animation
+   */
+  sneezeAnimation: function() {
+    this.animationCurrent    = 'SNEEZE';
+    this.animationDuration   = 4;
+    this.animationSpeed      = 2;
+    this.animationFrames     = 4;
+    this.animationFrame      = 0;
+    this.animationX          = 0;
+    this.animationY          = 0;
+    this.animationDirection  = true;
   },
   
 });

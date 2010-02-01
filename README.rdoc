@@ -10,24 +10,24 @@ eSheep is also known as Stray Sheep, Sheep.exe, Sheepy or Screen Mate Poe.
   - Destroy
   - Collision detection
   - Allow picking up
+  - Urinate
+  - Stick out tong
+  - Sneeze
 
 == Does not
  - Jump
  - Interact with other sheep
   - Love
-  - Flip backward uncountious
+  - Flip backward uncountiously
  - Dangle when picked up
  - Get abducted by aliens
- - Urinate
  - Get scared
- - Sneeze
  - Become a comet
  - Make sounds
  - Have gravity
  - Walk on divs with a 'floor' class
  - Dangle and fall down a div
  - Sit
- - Stick out it's tong
  - Eat plants
  
 yet :)
